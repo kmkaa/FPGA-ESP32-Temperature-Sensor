@@ -1,0 +1,55 @@
+module fpgatemp_wrapper (
+	input wire CLOCK_50,
+	input wire [3:0] KEY,
+	
+	//MCP3008
+	input wire adc_miso,
+	output wire adc_sclk,
+	output wire adc_cs_n,
+	output wire adc_mosi,
+	
+	//ESP32
+	input wire esp_sclk,
+	input wire esp_cs_n,
+	input wire esp_mosi,
+	output wire esp_miso
+);
+
+	reg rst_sync1, rst_sync2;
+	
+	always @(posedge CLOCK_50 or negedge KEY[0]) begin
+		if (!KEY[0]) begin
+			rst_sync1 <= 1'b0;
+			rst_sync2 <= 1'b0;
+		end else begin
+			rst_sync1 <= 1'b1;
+			rst_sync2 <= rst_sync1;
+		end
+	end
+	
+	wire [9:0] adc_result;
+	wire result_valid;
+	
+	mcp3008_spi_master u_master (
+		.clk (CLOCK_50),
+		.rst_n (rst_sync2),
+		.miso (adc_miso),
+		.sclk (adc_sclk),
+		.cs_n (adc_cs_n),
+		.mosi (adc_mosi),
+		.adc_result (adc_result),
+		.result_valid (result_valid)
+	);
+	
+	esp32_spi_follower u_follower (
+		.clk (CLOCK_50),
+		.rst_n (rst_sync2),
+		.miso (esp_miso),
+		.sclk_ext (esp_sclk),
+		.cs_ext (esp_cs_n),
+		.mosi_ext (esp_mosi),
+		.adc_result (adc_result),
+		.result_valid (result_valid)
+	);	
+	
+endmodule

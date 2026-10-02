@@ -1,0 +1,259 @@
+Regression run: 2026-09-26T16:17:11
+Total: 16  Passed: 0  Failed: 16
+
+[FAIL] SPI Master (MCP3008) vector=0000000000
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work mcp3008_spi_master_tb "+GOLDEN=0000000000" -do "run -all; quit -f" 
+# Start time: 16:16:54 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:16:54 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI Master (MCP3008) vector=1111111111
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work mcp3008_spi_master_tb "+GOLDEN=1111111111" -do "run -all; quit -f" 
+# Start time: 16:16:55 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:16:55 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI Master (MCP3008) vector=1010101010
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work mcp3008_spi_master_tb "+GOLDEN=1010101010" -do "run -all; quit -f" 
+# Start time: 16:16:56 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:16:56 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI Master (MCP3008) vector=0101010101
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work mcp3008_spi_master_tb "+GOLDEN=0101010101" -do "run -all; quit -f" 
+# Start time: 16:16:57 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:16:58 on Sep 26,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI Master (MCP3008) vector=1100110011
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work mcp3008_spi_master_tb "+GOLDEN=1100110011" -do "run -all; quit -f" 
+# Start time: 16:16:58 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:16:59 on Sep 26,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI Master (MCP3008) vector=1000000001
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work mcp3008_spi_master_tb "+GOLDEN=1000000001" -do "run -all; quit -f" 
+# Start time: 16:17:00 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:00 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI Master (MCP3008) vector=0111111110
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work mcp3008_spi_master_tb "+GOLDEN=0111111110" -do "run -all; quit -f" 
+# Start time: 16:17:01 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:01 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI Master (MCP3008) vector=1001100110
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work mcp3008_spi_master_tb "+GOLDEN=1001100110" -do "run -all; quit -f" 
+# Start time: 16:17:02 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:02 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI follower (ESP32) vector=0000000000
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work esp32_spi_follower_tb "+GOLDEN=0000000000" -do "run -all; quit -f" 
+# Start time: 16:17:03 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:03 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI follower (ESP32) vector=1111111111
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work esp32_spi_follower_tb "+GOLDEN=1111111111" -do "run -all; quit -f" 
+# Start time: 16:17:04 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:04 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI follower (ESP32) vector=1010101010
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work esp32_spi_follower_tb "+GOLDEN=1010101010" -do "run -all; quit -f" 
+# Start time: 16:17:05 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:05 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI follower (ESP32) vector=0101010101
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work esp32_spi_follower_tb "+GOLDEN=0101010101" -do "run -all; quit -f" 
+# Start time: 16:17:06 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:06 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI follower (ESP32) vector=1100110011
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work esp32_spi_follower_tb "+GOLDEN=1100110011" -do "run -all; quit -f" 
+# Start time: 16:17:07 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:07 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI follower (ESP32) vector=1000000001
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work esp32_spi_follower_tb "+GOLDEN=1000000001" -do "run -all; quit -f" 
+# Start time: 16:17:08 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:08 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI follower (ESP32) vector=0111111110
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work esp32_spi_follower_tb "+GOLDEN=0111111110" -do "run -all; quit -f" 
+# Start time: 16:17:09 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:09 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------
+[FAIL] SPI follower (ESP32) vector=1001100110
+Reading pref.tcl
+
+# 2025.2
+
+# ** Note: (vsim-220) 'C:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c -lib work esp32_spi_follower_tb "+GOLDEN=1001100110" -do "run -all; quit -f" 
+# Start time: 16:17:10 on Sep 26,2026
+# ** Error (suppressible): (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:17:10 on Sep 26,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+Error loading design
+
+------------------------------------------------------------

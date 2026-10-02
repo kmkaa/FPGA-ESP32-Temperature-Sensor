@@ -1,0 +1,26 @@
+module pin_test (
+    input  wire CLOCK_50,
+    input  wire [3:0] KEY,
+    input  wire adc_miso,
+    output wire adc_sclk,
+    output wire adc_cs_n,
+    output wire adc_mosi,
+    input  wire esp_sclk,
+    input  wire esp_cs_n,
+    input  wire esp_mosi,
+    output wire esp_miso
+);
+
+    reg [25:0] counter;
+    always @(posedge CLOCK_50) begin
+        counter <= counter + 1'b1;
+    end
+
+    wire slow_toggle = counter[25]; // toggles roughly once per second
+
+    assign adc_sclk = slow_toggle;
+    assign adc_cs_n = slow_toggle;
+    assign adc_mosi = slow_toggle;
+    assign esp_miso = slow_toggle;
+
+endmodule

@@ -1,0 +1,83 @@
+`timescale 1ns/1ps
+
+module mcp3008_spi_master_tb;
+
+    reg clk;
+    reg rst_n;
+    reg miso;
+    wire sclk;
+    wire cs_n;
+    wire mosi;
+    wire [9:0] adc_result;
+    wire result_valid;
+
+    integer errors;
+    integer bit_index;
+
+    reg [9:0] pattern; 
+    initial begin
+    if (!$value$plusargs("GOLDEN=%b", pattern))
+        pattern = 10'b1010101010;  // fallback default
+    end
+	
+    // Instantiate the unit under test
+    mcp3008_spi_master uut (
+        .clk(clk),
+        .rst_n(rst_n),
+        .miso(miso),
+        .sclk(sclk),
+        .cs_n(cs_n),
+        .mosi(mosi),
+        .adc_result(adc_result),
+        .result_valid(result_valid)
+    );
+
+    // 50MHz clock: 20ns period
+    always #10 clk = ~clk;
+
+    initial begin
+        clk   = 0;
+        rst_n = 0;
+        miso  = 0;
+        errors = 0;
+
+        // Hold reset for a few cycles
+        #100;
+        rst_n = 1;
+
+        wait (cs_n == 1'b0);
+        $display("CS went low at time %0t - transaction started", $time);
+
+        bit_index = 9; // MSB first
+
+        // Wait through cycles 1-7 
+        repeat (7) begin
+            @(negedge sclk); // falling edge = new bit period begins
+        end
+
+        repeat (10) begin
+            miso = pattern[bit_index];
+            bit_index = bit_index - 1;
+            @(negedge sclk);
+        end
+
+        // Wait for result_valid pulse
+        wait (result_valid == 1'b1);
+        @(posedge clk);
+
+        if (adc_result === pattern) begin
+            $display("PASS: adc_result = %b matches golden pattern %b", adc_result, pattern);
+        end else begin
+            $display("FAIL: adc_result = %b, expected %b", adc_result, pattern);
+            errors = errors + 1;
+        end
+
+        if (errors == 0)
+            $display("=== TEST PASSED: 0 errors ===");
+        else
+            $display("=== TEST FAILED: %0d errors ===", errors);
+
+        $stop;
+    end
+
+endmodule

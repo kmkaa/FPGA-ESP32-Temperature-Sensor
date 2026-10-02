@@ -1,0 +1,91 @@
+`timescale 1ns/1ps
+
+module esp32_spi_follower_tb;
+
+    reg clk;
+    reg rst_n;
+    reg sclk_ext;
+    reg cs_ext;
+    reg mosi_ext;
+    reg [9:0] adc_result;
+    reg result_valid;
+    wire miso;
+
+    integer errors;
+    integer i;
+    reg [9:0] captured_bits;
+    reg [9:0] test_pattern;
+
+    esp32_spi_follower uut (
+        .clk(clk),
+        .rst_n(rst_n),
+        .sclk_ext(sclk_ext),
+        .cs_ext(cs_ext),
+        .mosi_ext(mosi_ext),
+        .adc_result(adc_result),
+        .result_valid(result_valid),
+        .miso(miso)
+    );
+
+    // FPGA's own 50MHz system clock
+    always #10 clk = ~clk;
+
+    // Simulated ESP32 SPI clock: 1MHz, completely independent of clk
+    always #500 sclk_ext = ~sclk_ext;
+
+    initial begin
+        clk          = 0;
+        rst_n        = 0;
+        sclk_ext     = 0;
+        cs_ext       = 1;
+        mosi_ext     = 0;
+        result_valid = 0;
+        errors       = 0;
+        if (!$value$plusargs("GOLDEN=%b", golden_pattern)) begin
+        golden_pattern = 10'b1010101010;  // fallback default
+	end 
+        adc_result = test_pattern;
+
+        #100;
+        rst_n = 1;
+
+        // Let a few clk cycles pass so the reload has time to settle
+        #100;
+
+        // ESP32 asserts CS (active low) to start a transaction
+        cs_ext = 0;
+
+        // Give the synchronizer chain time to catch CS before the first
+        // sclk_ext edge arrives (needs ~3 clk cycles, we give it way more margin)
+        #200;
+
+        captured_bits = 10'b0;
+
+        // Sample MISO on every rising edge of sclk_ext, 10 times
+        for (i = 0; i < 10; i = i + 1) begin
+            @(posedge sclk_ext);
+            captured_bits = {captured_bits[8:0], miso};
+        end
+
+        // Transaction done, release CS
+        @(negedge sclk_ext);
+        cs_ext = 1;
+
+        #100;
+
+        if (captured_bits === test_pattern) begin
+            $display("PASS: captured_bits = %b matches test_pattern %b", captured_bits, test_pattern);
+        end else begin
+            $display("FAIL: captured_bits = %b, expected %b", captured_bits, test_pattern);
+            errors = errors + 1;
+        end
+
+        if (errors == 0)
+            $display("=== TEST PASSED: 0 errors ===");
+        else
+            $display("=== TEST FAILED: %0d errors ===", errors);
+
+        $stop;
+    end
+
+endmodule

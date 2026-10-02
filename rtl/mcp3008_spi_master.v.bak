@@ -1,0 +1,11 @@
+module mcp3008_spi_master (
+	input wire clk,
+	input wire rst_n, //active low reset
+	input wire miso, // MCP3008 out (DOUT)
+	output reg sclk, // SPI clk
+	output reg cs_n, // chip select 
+	output reg mosi, // MCP3008 in (DIN)
+	output reg [9:0] adc_result, 
+	output result_valid 
+);
+

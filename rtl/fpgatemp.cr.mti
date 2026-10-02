@@ -1,0 +1,33 @@
+{C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/esp32_spi_follower.v} {1 {vlog -work work -vopt -stats=none {C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/esp32_spi_follower.v}
+Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+** Note: (vlog-220) 'C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/fpgatemp.mpf' is used as the ini file.
+-- Compiling module esp32_spi_follower
+
+Top level modules:
+	esp32_spi_follower
+
+} {} {}} {C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/mcp3008_spi_master.v} {1 {vlog -work work -vopt -stats=none {C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/mcp3008_spi_master.v}
+Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+** Note: (vlog-220) 'C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/fpgatemp.mpf' is used as the ini file.
+-- Compiling module mcp3008_spi_master
+
+Top level modules:
+	mcp3008_spi_master
+
+} {} {}} {C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/tb_mcp3008_spi_master.v} {1 {vlog -work work -vopt -stats=none {C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/tb_mcp3008_spi_master.v}
+Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+** Note: (vlog-220) 'C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/fpgatemp.mpf' is used as the ini file.
+-- Compiling module mcp3008_spi_master_tb
+
+Top level modules:
+	mcp3008_spi_master_tb
+
+} {} {}} {C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/tb_esp32_follower.v} {1 {vlog -work work -vopt -stats=none {C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/tb_esp32_follower.v}
+Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+** Note: (vlog-220) 'C:/Users/AK/Desktop/Uni stuff/side projs/temp fpga+esp32 project/fpgatemp.mpf' is used as the ini file.
+-- Compiling module esp32_spi_follower_tb
+
+Top level modules:
+	esp32_spi_follower_tb
+
+} {} {}}

@@ -1,0 +1,26 @@
+module esp32_spi_follower (
+	input wire clk,
+	input wire rst_n,
+	input wire sclk_ext,
+	input wire cs_ext,
+	input wire mosi_ext,
+	input wire [9:0] adc_result,
+	input wire result_valid, //maybe use idk
+	output reg miso
+);
+
+	reg sclk_sync1, sclk_sync2, sclk_sync3;
+	reg cs_sync1, cs_sync2;
+	reg mosi_sync1, mosi_sync2;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
