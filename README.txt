@@ -9,7 +9,7 @@ Project Goals
 
 - Verification-Build test benches using (+GOLDEN= Vector) and automated Python regression running ModelSim simulations
 
-- Hardware-Firmware Boundary: Establish a low-latency digital link between an FPGA and a C-based ESP-IDF driver, delegating DSP filtering and temperature math (Beta parameter model) to the firmware layer.
+- Hardware-Firmware Boundary: Establish a low-latency digital link between an FPGA and a C-based ESP-IDF driver, delegating temperature math (Beta parameter model) to the firmware layer.
 
 - PCB Integration: Translate the validated breadboard prototype into a custom Altium board schematic and layout.
 
@@ -34,8 +34,8 @@ Hardware Architecture:
 2. ADC
 	MCP3008: 8 channel, 10 bit ADC with Vdd = 3.3V. Digitized to buffer 0-3.3V analog signal into 10 bit digital code (0-1023)
 3. FPGA (writer in Verilog)
-	mcp3008_spi_master: Custom SPI master module that requests Channel 0 of ADC every 1 second. Handles clock divisions, chip select assertions and 17 bit register shifting
-	esp32_spi_follower: double buffered SPI slave module that takes the latest 10 bit ADC sample to external master. Clock edge sync across domains to prevent metastability 
+	mcp3008_spi_master: Custom SPI master module that requests Channel 0 of ADC every 1 millisecond. Handles clock divisions, chip select assertions and 17 bit register shifting
+	esp32_spi_follower: SPI slave module that takes the latest 10 bit ADC sample to external master. Clock edge sync across domains to prevent metastability 
 	fpgatemp_wrapper: Top level wrapper connecting above modules and syncing hardware resets and routing GPIO pin assignments
 4. ESP32 
 	Written in C using platformIO
